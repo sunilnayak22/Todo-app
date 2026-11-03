@@ -1,23 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
 <body>
 
     <div class="container">
 
         <h1>My Tasks.</h1>
-        <p class="subtitle">Organize your day, one task at a time.</p>
+
+        <p class="subtitle">
+            Organize your day, one task at a time.
+        </p>
 
         <div class="input-section">
-            <input id="todoInput" type="text"
-                placeholder="What needs to be done?">
+
+            <input
+                id="todoInput"
+                type="text"
+                placeholder="What needs to be done?"
+            >
 
             <button class="add-btn" onclick="addTodo()">
                 + Add Task
             </button>
+
         </div>
 
         <div class="list-heading">
+
             <h2>Your Tasks</h2>
-            <span class="task-count">My Todo List</span>
+
+            <span class="task-count">
+                My Todo List
+            </span>
+
         </div>
 
         <ul id="todoList"></ul>
@@ -27,3 +47,5 @@
     <script src="script.js"></script>
 
 </body>
+
+</html>
