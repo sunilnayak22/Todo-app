@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
 <body>
 
-    <h1>My Todo App</h1>
+    <div class="container">
 
-    <input id="todoInput" type="text" placeholder="Enter todo">
+        <h1>My Tasks.</h1>
+        <p class="subtitle">Organize your day, one task at a time.</p>
 
-    <button onclick="addTodo()">Add</button>
+        <div class="input-section">
+            <input id="todoInput" type="text"
+                placeholder="What needs to be done?">
 
-    <ul id="todoList"></ul>
+            <button class="add-btn" onclick="addTodo()">
+                + Add Task
+            </button>
+        </div>
+
+        <div class="list-heading">
+            <h2>Your Tasks</h2>
+            <span class="task-count">My Todo List</span>
+        </div>
+
+        <ul id="todoList"></ul>
+
+    </div>
 
     <script src="script.js"></script>
 
 </body>
-</html>
