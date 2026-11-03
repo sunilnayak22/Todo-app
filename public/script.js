@@ -12,12 +12,16 @@ async function getTodos() {
 
         const li = document.createElement("li");
 
-        li.innerHTML = `
-            ${todo.text}
-            <button onclick="deleteTodo(${todo.id})">
-                Delete
-            </button>
-        `;
+       li.textContent = todo.text;
+
+        const button = document.createElement("button");
+
+        button.textContent = "Delete";
+        button.className = "delete-btn";
+
+        button.onclick = () => deleteTodo(todo.id);
+
+        li.appendChild(button);
 
         list.appendChild(li);
     });
