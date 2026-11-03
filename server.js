@@ -1,10 +1,11 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-
+app.use(express.static("public"));
 let todos = [
     { id: 1, text: "Learn Node.js" },
     { id: 2, text: "Build a backend project" }
@@ -12,12 +13,7 @@ let todos = [
 
 // GET - get all todos
 app.get("/", (req, res) => {
-     const filePath = path.join(__dirname, 'public', 'index.html');
-    res.sendFile(filePath, (err) => {
-        if (err) {
-            res.status(500).send('File not found');
-        }
-    })
+    res.sendFile(path.join(__dirname, "public", "index.html"))
 });
 
 app.get("/api/todos", (req, res) => {
