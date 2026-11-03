@@ -12,7 +12,12 @@ let todos = [
 
 // GET - get all todos
 app.get("/", (req, res) => {
-    res.send("Todo API is running!");
+     const filePath = path.join(__dirname, 'public', 'index.html');
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            res.status(500).send('File not found');
+        }
+    })
 });
 
 app.get("/api/todos", (req, res) => {
