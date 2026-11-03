@@ -4,7 +4,6 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(express.static("public"));
 
 let todos = [
     { id: 1, text: "Learn Node.js" },
@@ -12,6 +11,10 @@ let todos = [
 ];
 
 // GET - get all todos
+app.get("/", (req, res) => {
+    res.send("Todo API is running!");
+});
+
 app.get("/api/todos", (req, res) => {
     res.json(todos);
 });
